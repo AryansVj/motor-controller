@@ -344,8 +344,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	} else if (GPIO_Pin == FAULT_COND_Pin) {
 		status->fault_status = 1;
 		status->ref_speed = 0;
-		HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
+		PWM_MOTOR_OFF();
 	}
+}
+
+void PWM_MOTOR_OFF () {
+	// Logic to switch the motor off using pwm
 }
 
 // Timer 2 input capture

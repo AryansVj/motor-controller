@@ -30,7 +30,6 @@
 	  int ref_speed;
 	  int act_speed;
 	  int fault_status;
-	  uint16_t current_rpm;
   } RUN_Status;
 /* USER CODE END PTD */
 
@@ -107,8 +106,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-	  HAL_Delay(1000);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -323,11 +321,6 @@ static void MX_GPIO_Init(void)
 RUN_Status ref_status = {0};
 RUN_Status* status = &ref_status;
 
-uint32_t init_captureVal;
-uint32_t last_captureVal;
-volatile int pulse_count = 0;
-volatile uint16_t rpm = 0;
-
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == INC_Btn_Pin) {
@@ -344,11 +337,19 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	} else if (GPIO_Pin == FAULT_COND_Pin) {
 		status->fault_status = 1;
 		status->ref_speed = 0;
-		HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
+		PWM_MOTOR_OFF();
 	}
 }
 
+void PWM_MOTOR_OFF () {
+	// Logic to switch the motor off using pwm
+}
+
 // Timer 2 input capture
+uint32_t init_captureVal;
+uint32_t last_captureVal;
+volatile int pulse_count = 0;
+volatile uint16_t rpm = 0;
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
@@ -366,7 +367,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	if (htim->Instance == TIM2) {
 		last_captureVal = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
 		rpm = (pulse_count%10)*60/(last_captureVal - init_captureVal);	// Check units (milliseconds or s)
-		status->current_rpm = rpm;
 
 		pulse_count = 0;
 	}
