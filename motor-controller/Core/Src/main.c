@@ -21,17 +21,17 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "pid.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-  typedef struct {
-	  int ref_speed;
-	  int act_speed;
-	  int fault_status;
-	  uint16_t current_rpm;
-  } RUN_Status;
+typedef struct {
+  double ref_speed;
+  double current_rpm;
+  double pid_out;
+  int fault_status;
+} RUN_Status;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -49,7 +49,19 @@ TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
 /* USER CODE BEGIN PV */
+RUN_Status ref_status = {0};
+RUN_Status* status = &ref_status;
 
+uint32_t init_captureVal;
+uint32_t last_captureVal;
+volatile int pulse_count = 0;
+volatile double rpm = 0;
+
+PID_TypeDef vPID;
+double vInput, vOutput, vSetpoint;
+double Kp=1, Ki=1, Kd=1;
+PIDPON_TypeDef POn =  _PID_P_ON_E;
+PIDCD_TypeDef ControllerDirection = _PID_CD_DIRECT;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -82,7 +94,10 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  PID(&vPID, status->current_rpm, status->pid_out, status->ref_speed, Kp, Ki, Kd, POn, ControllerDirection);
+  PID_SetMode(&vPID, _PID_MODE_AUTOMATIC);
+  PID_SetSampleTime(&vPID, 600);
+  PID_SetOutputLimits(&vPID, 0, 1000);
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -320,13 +335,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-RUN_Status ref_status = {0};
-RUN_Status* status = &ref_status;
-
-uint32_t init_captureVal;
-uint32_t last_captureVal;
-volatile int pulse_count = 0;
-volatile uint16_t rpm = 0;
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
@@ -369,6 +377,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		status->current_rpm = rpm;
 
 		pulse_count = 0;
+		PID_Compute(&vPID);
+		TIM3->CCR1 = (int)(status->pid_out*255/1000);
+		HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
 	}
 }
 
