@@ -26,6 +26,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+// DS for running status of the motor
 typedef struct {
   double ref_speed;
   double current_rpm;
@@ -49,6 +50,7 @@ TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
 /* USER CODE BEGIN PV */
+// Status update and sampling
 RUN_Status ref_status = {0};
 RUN_Status* status = &ref_status;
 
@@ -57,6 +59,7 @@ uint32_t last_captureVal;
 volatile int pulse_count = 0;
 volatile double rpm = 0;
 
+// PID Controller
 PID_TypeDef vPID;
 double vInput, vOutput, vSetpoint;
 double Kp=1, Ki=1, Kd=1;
@@ -75,6 +78,7 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+// Indicator LED Array control using shift registers
 void LEDshiftArray(int count);
 /* USER CODE END 0 */
 
@@ -380,7 +384,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (htim->Instance == TIM2) {
 		last_captureVal = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
-		rpm = (pulse_count%10)*60/(last_captureVal - init_captureVal);	// Check units (milliseconds or s)
+		// When at 100 RPM, there is one revolution per 0.6 seconds. Thus 10 pulses per period of 600ms
+		rpm = (pulse_count%101)*60/(10*(last_captureVal - init_captureVal));	// Check units (milliseconds or s)
 		status->current_rpm = rpm;
 
 		pulse_count = 0;

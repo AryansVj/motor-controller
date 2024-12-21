@@ -1,13 +1,7 @@
-15:13:15 **** Incremental Build of configuration Debug for project motor-controller ****
+17:30:46 **** Build of configuration Debug for project motor-controller ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/pid.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pid.d" -MT"Core/Src/pid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/pid.o"
 arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
-arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
-In file included from ../Core/Src/pid.c:21:
-../Core/Inc/pid.h:93: warning: ignoring '#pragma diag_suppress ' [-Wunknown-pragmas]
-   93 |         #pragma diag_suppress 177     /* Disable 'unused function' warning */
-      | 
 In file included from ../Core/Src/main.c:24:
 ../Core/Inc/pid.h:93: warning: ignoring '#pragma diag_suppress ' [-Wunknown-pragmas]
    93 |         #pragma diag_suppress 177     /* Disable 'unused function' warning */
@@ -18,11 +12,11 @@ Finished building target: motor-controller.elf
 arm-none-eabi-size   motor-controller.elf 
 arm-none-eabi-objdump -h -S  motor-controller.elf  > "motor-controller.list"
    text	   data	    bss	    dec	    hex	filename
-  15496	     56	   1960	  17512	   4468	motor-controller.elf
+  15268	     56	   1888	  17212	   433c	motor-controller.elf
 Finished building: default.size.stdout
  
 Finished building: motor-controller.list
  
 
-15:13:17 Build Finished. 0 errors, 2 warnings. (took 1s.280ms)
+17:30:48 Build Finished. 0 errors, 1 warnings. (took 2s.327ms)
 
