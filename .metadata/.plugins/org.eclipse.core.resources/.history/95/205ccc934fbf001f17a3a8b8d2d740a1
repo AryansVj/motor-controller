@@ -96,10 +96,10 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  PID(&vPID, &status->current_rpm, &status->pid_out, &status->ref_speed, Kp, Ki, Kd, POn, ControllerDirection);
-  PID_SetMode(&vPID, _PID_MODE_AUTOMATIC);
-  PID_SetSampleTime(&vPID, 600);
-  PID_SetOutputLimits(&vPID, 0, 1000);
+//  PID(&vPID, &status->current_rpm, &status->pid_out, &status->ref_speed, Kp, Ki, Kd, POn, ControllerDirection);
+//  PID_SetMode(&vPID, _PID_MODE_AUTOMATIC);
+//  PID_SetSampleTime(&vPID, 600);
+//  PID_SetOutputLimits(&vPID, 0, 1000);
   /* USER CODE END Init */
 
   /* Configure the system clock */
