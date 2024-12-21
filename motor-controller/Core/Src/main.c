@@ -77,7 +77,7 @@ static void MX_TIM4_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void LEDshiftArray(int count);
 /* USER CODE END 0 */
 
 /**
@@ -124,8 +124,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-	  HAL_Delay(1000);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -366,6 +365,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, LED_DS_Pin|LED_SHCP_Pin|LED_STCP_Pin, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -377,6 +379,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pin = INC_Btn_Pin|DEC_Btn_Pin|RESET_Btn_Pin|FAULT_COND_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LED_DS_Pin LED_SHCP_Pin LED_STCP_Pin */
+  GPIO_InitStruct.Pin = LED_DS_Pin|LED_SHCP_Pin|LED_STCP_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
@@ -439,10 +448,32 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		status->current_rpm = rpm;
 
 		pulse_count = 0;
-		PID_Compute(&vPID);
-		TIM3->CCR1 = (int)(status->pid_out);
-		HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+		if (!status->fault_status) {
+			PID_Compute(&vPID);
+			TIM3->CCR1 = (int)(status->pid_out);
+			HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+		}
 	}
+}
+
+void LEDshiftArray(int count) {
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, GPIO_PIN_RESET);
+
+	for (int i = 0; i < 16; i++) {
+		if (i < count) {
+			// [] [] [] [] [] [] [] [] [] [] 0 0 0 0 0 0 < LSB
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);
+		}
+		else {
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);
+		}
+
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, GPIO_PIN_RESET);
+
+	}
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, GPIO_PIN_SET);
 }
 
 /* USER CODE END 4 */

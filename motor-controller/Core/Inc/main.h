@@ -71,6 +71,12 @@ void Error_Handler(void);
 #define FAULT_COND_Pin GPIO_PIN_4
 #define FAULT_COND_GPIO_Port GPIOA
 #define FAULT_COND_EXTI_IRQn EXTI4_IRQn
+#define LED_DS_Pin GPIO_PIN_10
+#define LED_DS_GPIO_Port GPIOA
+#define LED_SHCP_Pin GPIO_PIN_11
+#define LED_SHCP_GPIO_Port GPIOA
+#define LED_STCP_Pin GPIO_PIN_12
+#define LED_STCP_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 
