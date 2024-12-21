@@ -484,3 +484,87 @@
 2024-12-21 08:44:17,368 [INFO] CADModel:165 - CPN selected for project levelSTM32F103C8T6
 2024-12-21 08:44:17,369 [INFO] CADModel:114 - Register for checkConnection events
 2024-12-21 08:44:17,423 [INFO] OpenFileManager:328 - Restore cursor
+2024-12-21 08:47:41,778 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-12-21 08:48:24,757 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-12-21 08:49:57,484 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 652617264 Bytes (1073741824)
+2024-12-21 08:49:58,190 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 668026840 Bytes (1073741824)
+2024-12-21 08:49:59,797 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 729689648 Bytes (1073741824)
+2024-12-21 08:50:00,237 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-12-21 08:50:00,237 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8F1
+2024-12-21 08:50:00,238 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8F1
+2024-12-21 08:50:00,238 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-12-21 08:50:00,238 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-12-21 08:50:00,238 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-12-21 08:50:00,242 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.1.202307191849\\db\
+2024-12-21 08:50:00,488 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\license.tmp_save
+2024-12-21 08:50:00,889 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\license.tmp
+2024-12-21 08:50:01,000 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\gpio.tmp_save
+2024-12-21 08:50:01,128 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\gpio.tmp
+2024-12-21 08:50:01,299 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\stm32f1xx_it.c_save
+2024-12-21 08:50:01,445 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\stm32f1xx_it.c
+2024-12-21 08:50:01,470 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\stm32f1xx_it.h_save
+2024-12-21 08:50:01,557 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\stm32f1xx_it.h
+2024-12-21 08:50:01,601 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\stm32f1xx_hal_msp.c_save
+2024-12-21 08:50:01,726 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\stm32f1xx_hal_msp.c
+2024-12-21 08:50:01,740 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\system.tmp_save
+2024-12-21 08:50:01,812 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\system.tmp
+2024-12-21 08:50:01,843 [INFO] CodeEngine:311 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\stm32f1xx_hal_conf.h_save
+2024-12-21 08:50:01,942 [INFO] CodeEngine:335 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\stm32f1xx_hal_conf.h
+2024-12-21 08:50:01,968 [WARN] IPConfigManager:3431 - IP not found : TIM
+2024-12-21 08:50:01,969 [WARN] CodeGenerator:3760 - IP not found : null
+2024-12-21 08:50:02,003 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\main.h_save
+2024-12-21 08:50:02,103 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\main.h
+2024-12-21 08:50:02,129 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\main.c_save
+2024-12-21 08:50:02,333 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\main.c
+2024-12-21 08:50:02,967 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 274mS.
+2024-12-21 08:50:02,971 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2024-12-21 08:50:03,298 [INFO] ConfigFileManager:1457 - The Die is : DIE410
+2024-12-21 08:50:03,320 [INFO] ApiDbMcu:507 - Load IP Config File for FATFS
+2024-12-21 08:50:03,335 [INFO] ApiDbMcu:507 - Load IP Config File for FREERTOS
+2024-12-21 08:50:03,350 [INFO] ApiDbMcu:507 - Load IP Config File for USB_DEVICE
+2024-12-21 08:50:04,432 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2024-12-21 08:50:05,940 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 2968mS.
+2024-12-21 08:50:05,941 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2024-12-21 08:50:05,942 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 1mS.
+2024-12-21 08:58:55,485 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-12-21 09:00:56,398 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 714911384 Bytes (1073741824)
+2024-12-21 09:01:03,900 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 733725432 Bytes (1073741824)
+2024-12-21 09:01:07,477 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 828410016 Bytes (1073741824)
+2024-12-21 09:01:07,673 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-12-21 09:01:07,673 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8F1
+2024-12-21 09:01:07,673 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8F1
+2024-12-21 09:01:07,673 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-12-21 09:01:07,674 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-12-21 09:01:07,674 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-12-21 09:01:07,675 [INFO] CodeGenerator:799 - code generatio: config db path: C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.9.1.202307191849\\db\
+2024-12-21 09:01:07,775 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\license.tmp_save
+2024-12-21 09:01:07,939 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\license.tmp
+2024-12-21 09:01:07,959 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\gpio.tmp_save
+2024-12-21 09:01:08,063 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\gpio.tmp
+2024-12-21 09:01:08,137 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\stm32f1xx_it.c_save
+2024-12-21 09:01:08,327 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\stm32f1xx_it.c
+2024-12-21 09:01:08,334 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\stm32f1xx_it.h_save
+2024-12-21 09:01:08,406 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\stm32f1xx_it.h
+2024-12-21 09:01:08,427 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\stm32f1xx_hal_msp.c_save
+2024-12-21 09:01:08,535 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\stm32f1xx_hal_msp.c
+2024-12-21 09:01:08,539 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\system.tmp_save
+2024-12-21 09:01:08,612 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\MXTmpFiles\system.tmp
+2024-12-21 09:01:08,637 [INFO] CodeEngine:311 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\stm32f1xx_hal_conf.h_save
+2024-12-21 09:01:08,766 [INFO] CodeEngine:335 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\stm32f1xx_hal_conf.h
+2024-12-21 09:01:08,791 [WARN] IPConfigManager:3431 - IP not found : TIM
+2024-12-21 09:01:08,792 [WARN] CodeGenerator:3760 - IP not found : null
+2024-12-21 09:01:08,827 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\main.h_save
+2024-12-21 09:01:08,900 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Inc\main.h
+2024-12-21 09:01:08,914 [INFO] CodeEngine:255 - oldGeneratedFile, E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\main.c_save
+2024-12-21 09:01:09,058 [INFO] CodeEngine:279 - Generated code: E:\Projects\aevocode_assg\motor-controller\motor-controller\Core\Src\main.c
+2024-12-21 09:01:09,515 [INFO] ProjectBuilder:3064 - Time for Copy HAL[1] : 80mS.
+2024-12-21 09:01:09,518 [INFO] ProjectBuilder:4404 - Project Generator version: 4.1.0
+2024-12-21 09:01:09,763 [INFO] ConfigFileManager:1457 - The Die is : DIE410
+2024-12-21 09:01:10,839 [INFO] ProjectBuilder:4626 - Time for Generating toolchain IDE Files: 1321mS.
+2024-12-21 09:01:10,840 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 1mS.
+2024-12-21 09:01:10,848 [INFO] ProjectBuilder:2935 - Time for Copy CMSIS : 0mS.
+2024-12-21 09:04:16,457 [INFO] Activator:176 - 
+
+
+2024-12-21 09:04:16,459 [INFO] Activator:177 - !SESSION log4j initialized
+2024-12-21 09:04:21,805 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
